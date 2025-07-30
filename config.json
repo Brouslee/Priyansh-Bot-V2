@@ -1,6 +1,6 @@
 {
     "language": "en",
-    "keyActive": "",
+    "keyActive": ".",
     "DeveloperMode": false,
     "autoCreateDB": true,
     "notiGroup": true,
@@ -16,13 +16,13 @@
     "EMAIL": "",
     "PASSWORD": "",
     "OTPKEY": "",
-    "BOTNAME": "Your-Father",
-    "PREFIX": "/",
+    "BOTNAME": "MEKO*BOT",
+    "PREFIX": ".",
     "ADMINBOT": [
-        "100037743553265"
+        "100087632392287"
     ],
     "NDH": [
-        "100037743553265"
+        "100087632392287"
     ],
     "DATABASE": {
         "sqlite": {
