@@ -48,7 +48,7 @@
     "checktt": {
         "maxColumn": 300
     },
-    "daily": {
+    "يومي": {
         "cooldownTime": 43200000,
         "rewardCoin": 1000
     },
@@ -61,10 +61,10 @@
     "instagram": {
         "APIKEY": "81b0466275mshb5265735e50299cp1b01c5jsn3e7f93112fd3"
     },
-    "math": {
+    "رياضيات": {
         "WOLFRAM": "T8J8YV-H265UQ762K"
     },
-    "menu": {
+    "قائمة": {
         "autoUnsend": true,
         "delayUnsend": 55
     },
@@ -72,7 +72,7 @@
         "autoUnsend": true,
         "unsendMessageAfter": 10
     },
-    "rname": {
+    "رنيم": {
         "APIKEY": "mi451266190"
     },
     "sauce": {
@@ -93,13 +93,13 @@
     "weather": {
         "OPEN_WEATHER": "c4ef85b93982d6627681b056e24bd438"
     },
-    "work": {
+    "عمل": {
         "cooldownTime": 1200000
     },
     "log": {
         "enable": true
     },
-    "fbcover": {
+    "غلافيس": {
         "APIKEY": "tdunguwu"
     },
     "مساعدة2": {
@@ -119,7 +119,7 @@
         "YOUTUBE_API": "AIzaSyDdzsxzYZAoBCxF-TXQyVhd52_Tslu-FXU",
         "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
     },
-    "tiktok": {
+    "تيكتوك": {
         "API_KEY": "mzkFree_XNPP4LYOG9H8VY83GHG"
     },
     "ghép": {
@@ -132,7 +132,7 @@
     "lixi": {
         "cooldownTime": 1100000
     },
-    "sim": {
+    "سيم": {
         "APIKEY": "Priyansh_1234567890"
     },
     "lamviec": {
@@ -144,7 +144,7 @@
         "superWinBonus": 2,
         "epicWinBonus": 4
     },
-    "tikvd": {
+    "تيك": {
         "API_KEY": "mzkFree_X0IFR3FV0P97U4VL83F"
     },
     "loto": {
@@ -160,60 +160,60 @@
     "subnautica": {
         "APIKEY": ""
     },
-    "shortvd": {
+    "ريلز": {
         "APIKEY": "XSemUp2Zv5"
     },
     "subnau": {
         "APIKEY": ""
     },
-    "video2": {
+    "فيديو2": {
         "YOUTUBE_API": "AIzaSyAE4wH3OSfPUjJZTJvByQfXhEuaBMXjzAA"
     },
     "nganhang": {
         "key": "DUBFREE"
     },
-    "video": {
+    "فيديو": {
         "YOUTUBE_API": "AIzaSyAE4wH3OSfPUjJZTJvByQfXhEuaBMXjzAA"
     },
-    "music": {
+    "اغنية": {
         "YOUTUBE_API": "AIzaSyAwzbcb-6QAzgZtl4qf3Z2GhQ3mqrbbMR8"
     },
     "mine": {
         "APIKEY": ""
     },
-    "youtube": {
+    "يوتيوب": {
         "YOUTUBE_API": "AIzaSyBNqRSYmQ9D1WWIa186k8nSvo5mr2Rvk5M"
     },
-    "ytb": {
+    "يوتيوب2": {
         "YOUTUBE_API": "AIzaSyBNqRSYmQ9D1WWIa186k8nSvo5mr2Rvk5M"
     },
-    "voice": {
+    "صوت": {
         "zalo_apikey": "r5lKNWX89OJEJMXlUEpGEzcjByjGb2F0",
         "fpt_apikey": "MhYPX3ksxwdqLC63LiAR4r47sOrkSdhj"
     },
-    "anime": {
+    "انمي": {
         "cooldownTime": 1200000
     },
     "bannermkt": {
         "APIKEY": "tdunguwu"
     },
-    "radio": {
+    "راديو": {
         "YOUTUBE_API": "AIzaSyA81xmaIo6uozgapDe7_yDjFfnOwkfx_XA"
     },
     "mkt": {
         "APIKEY": "tdunguwu"
     },
-    "moon": {
+    "قمر": {
         "APIKEY": "tdunguwu"
     },
     "cardinfo": {
         "APIKEY": "tuandz"
     },
-    "help3": {
+    "مساعد3": {
         "autoUnsend": true,
         "delayUnsend": 300
     },
-    "job": {
+    "شغل": {
         "cooldownTime": 5000
     },
     "fish": {
@@ -226,7 +226,7 @@
     "god": {
         "enable": true
     },
-    "help2": {
+    مساعدة2": {
         "autoUnsend": true,
         "delayUnsend": 300
     }
