@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "ban",
+	name: "بان",
 	version: "2.0.5",
 	hasPermssion: 0,
 	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
