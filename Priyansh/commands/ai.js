@@ -1,6 +1,6 @@
 const axios = require("axios");
 module.exports.config = {
-    name: "ai",
+    name: "ميكو",
     version: "1.0.0",
     hasPermssion: 0,
     credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
@@ -21,9 +21,9 @@ module.exports.run = async function ({ api, event, args, Users }) {
 
   var name = await Users.getNameUser(event.senderID);
 
-  if (!args[0]) return api.sendMessage("Please type a message...", threadID, messageID );
+  if (!args[0]) return api.sendMessage("اكتب رسالة 😭😭", threadID, messageID );
   
-  api.sendMessage("Searching for an answer, please wait...", threadID, messageID);
+  api.sendMessage("يتمم البحث عن اجابة لسؤالك اتمنه تنتظر 👉🏻👈🏻", threadID, messageID);
 
   try{
 
@@ -39,6 +39,6 @@ module.exports.run = async function ({ api, event, args, Users }) {
 }
   catch (error) {
     console.error('Error fetching package.json:', error);
-  api.sendMessage("An error occurred while fetching data. Please try again later.", event.threadID, event.messageID);
+  api.sendMessage("اعتذرر حصل خطأ 😞🚫 Please try again later.", event.threadID, event.messageID);
   }
 };
