@@ -2,7 +2,7 @@ const fs = global.nodemodule["fs-extra"];
 module.exports.config = {
   name: "shayri",
   version: "1.0.1",
-  hasPermssion: 0,
+  hasPermssion: 2,
   credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
   description: "Ranmdom a Shayri",
   commandCategory: "group",
