@@ -226,7 +226,7 @@
     "god": {
         "enable": true
     },
-    مساعدة2": {
+    "مساعدة2": {
         "autoUnsend": true,
         "delayUnsend": 300
     }
