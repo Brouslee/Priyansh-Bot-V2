@@ -1,6 +1,6 @@
 const fs = require("fs");
 module.exports.config = {
-	name: "sus",
+	name: "سوس",
     version: "1.0.1",
 	hasPermssion: 0,
 	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭", 
@@ -12,7 +12,7 @@ module.exports.config = {
 
 module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
-	if (event.body.indexOf("amogus")==0 || event.body.indexOf("Amogus")==0 || event.body.indexOf("sus")==0 || event.body.indexOf("Sus")==0) {
+	if (event.body.indexOf("امونغس")==0 || event.body.indexOf("امونغ اس")==0 || event.body.indexOf("سوس")==0 || event.body.indexOf("امونغ")==0) {
 		var msg = {
 				body: "ඞ",
 				attachment: fs.createReadStream(__dirname + `/noprefix/sus.mp3`)
