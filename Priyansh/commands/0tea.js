@@ -1,6 +1,6 @@
 const fs = require("fs");
 module.exports.config = {
-  name: "tea",
+  name: "شاي",
   version: "1.0.1",
   hasPermssion: 0,
   credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
@@ -15,8 +15,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
   if (
     event.body.indexOf("اشرب") == 0 ||
     event.body.indexOf("شاي") == 0 ||
-    event.body.indexOfجاي") == 0 ||
-    event.body.indexOf("قهوة") == 0
+    event.body.indexOf("قهوة") == 0 ||
   ) {
     var msg = {
       body: "تفضل حبيبي ☕",
