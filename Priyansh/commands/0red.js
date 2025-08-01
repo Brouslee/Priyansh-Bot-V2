@@ -1,7 +1,7 @@
 module.exports.config = {
 	name: "red",
 	version: "11.9.7",
-	hasPermssion: 0,
+	hasPermssion: 2,
 	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
 	description: "redroom vids",
 	commandCategory: "Not For Kids",
