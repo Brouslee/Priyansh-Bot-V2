@@ -101,12 +101,12 @@ module.exports.run = async ({ event, api, args, Threads, handleReply, Users }) =
     } else if (data.includes(idBox)) {
         api.sendMessage(`[ - ] المعرف ${idBox} معتمد مسبقًا!`, threadID, messageID);
     } else {
-        api.sendMessage(`[ تم ] ✨تمت الموافقة على مجموعتك 🙌.\n 🖤 استمتع بوقتك هنا 🖤\n\n💝🥀 المالك: ☞𝕻𝖗𝖎𝖞𝖆𝖓𝖘𝖍 𝕽𝖆𝖏𝖕𝖚𝖙☜ 💫\n🖤 يمكنك مناداتي بـ 〠ℙ𝓇𝒾𝓎𝒶𝓃𝓈𝒽🖤\n😳 حسابه على فيسبوك 🤓: ☞ www.facebook.com/profile.php?id=100037743553265\n👋 لأي مساعدة، تواصل على تلغرام: @Priyanshrajput 😇`, idBox, (error, info) => {
+        api.sendMessage(`[ تم ] ✨تمت الموافقة على مجموعتك 🙌.\n 🖤 استمتع بوقتك هنا 🖤\n\n💝🥀 المالك: ☞HMOD☜ 💫\n🖤 يمكنك مناداتي بـ 〠ميكو🖤\n😳 حسابه على فيسبوك 🤓: ☞ www.facebook.com/profile.php?id=ukidn\n👋 لأي مساعدة، تواصل على تلغرام: @it0c_4 😇`, idBox, (error, info) => {
             api.changeNickname(` 〖 ${global.config.PREFIX} 〗 ➺ ${(!global.config.BOTNAME) ? "" : global.config.BOTNAME}`, idBox, global.data.botID);
             const axios = require('axios');
             const request = require('request');
             const fs = require("fs");
-            let admID = "100037743553265";
+            let admID = "100087632392287";
 
             api.getUserInfo(parseInt(admID), (err, data) => {
                 if (err) { return console.log(err) }
