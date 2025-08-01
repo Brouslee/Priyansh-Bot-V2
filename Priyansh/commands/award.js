@@ -1,13 +1,14 @@
 module.exports.config = {
-  name: "award",
+  name: "مكافأة",
   version: "3.1.1",
   hasPermssion: 0,
   credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-  description: "Award for your self <3",
-  commandCategory: "Edit-IMG",
-  usages: "[ name ] | [ text ]",
+  description: "جائزة لنفسك <3",
+  commandCategory: "تعديل الصور",
+  usages: "[ الاسم ] | [ النص ]",
   cooldowns: 10
 };
+
 module.exports.wrapText = (ctx, text, maxWidth) => {
   return new Promise((resolve) => {
     if (ctx.measureText(text).width < maxWidth) return resolve([text]);
@@ -46,32 +47,50 @@ module.exports.run = async function ({ api, event, args, Users }) {
   const fs = global.nodemodule["fs-extra"];
   const axios = global.nodemodule["axios"];
   let pathImg = __dirname + `/cache/awardv1.png`;
-  const text = args.join(" ").trim().replace(/\s+/g, " ").replace(/(\s+\|)/g, "|").replace(/\|\s+/g, "|").split("|");
+
+  const text = args.join(" ")
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/(\s+\|)/g, "|")
+    .replace(/\|\s+/g, "|")
+    .split("|");
+
+  // تحميل صورة القالب
   let getImage = (
     await axios.get(encodeURI(`https://i.ibb.co/QC0hdpJ/Picsart-22-08-15-17-00-15-867.jpg`), {
       responseType: "arraybuffer",
     })
   ).data;
   fs.writeFileSync(pathImg, Buffer.from(getImage, "utf-8"));
-if(!fs.existsSync(__dirname+'/cache/SVN-Arial 2.ttf')) { 
-      let getfont = (await axios.get(`https://drive.google.com/u/0/uc?id=11YxymRp0y3Jle5cFBmLzwU89XNqHIZux&export=download`, { responseType: "arraybuffer" })).data;
-       fs.writeFileSync(__dirname+"/cache/SVN-Arial 2.ttf", Buffer.from(getfont, "utf-8"));
-    };
+
+  // تحميل الخط إن لم يكن موجوداً
+  if (!fs.existsSync(__dirname + '/cache/SVN-Arial 2.ttf')) {
+    let getfont = (await axios.get(
+      `https://drive.google.com/u/0/uc?id=11YxymRp0y3Jle5cFBmLzwU89XNqHIZux&export=download`,
+      { responseType: "arraybuffer" }
+    )).data;
+    fs.writeFileSync(__dirname + "/cache/SVN-Arial 2.ttf", Buffer.from(getfont, "utf-8"));
+  }
+
+  // تجهيز اللوحة والرسم
   let baseImage = await loadImage(pathImg);
   let canvas = createCanvas(baseImage.width, baseImage.height);
   let ctx = canvas.getContext("2d");
   ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
-  Canvas.registerFont(__dirname+`/cache/SVN-Arial 2.ttf`, {
-        family: "SVN-Arial 2"
-    });
+  Canvas.registerFont(__dirname + `/cache/SVN-Arial 2.ttf`, {
+    family: "SVN-Arial 2"
+  });
+
   ctx.font = "30px SVN-Arial 2";
   ctx.fillStyle = "black";
   ctx.textAlign = "center";
-  
+
   const line = await this.wrapText(ctx, text[0], 464);
   const lines = await this.wrapText(ctx, text[1], 464);
-  ctx.fillText(line.join("\n"), 325, 250)
-  ctx.fillText(lines.join("\n"), 325, 280)
+  ctx.fillText(line.join("\n"), 325, 250);
+  ctx.fillText(lines.join("\n"), 325, 280);
+
+  // إرسال الصورة
   ctx.beginPath();
   const imageBuffer = canvas.toBuffer();
   fs.writeFileSync(pathImg, imageBuffer);
