@@ -1,6 +1,5 @@
-
 module.exports.config = {
-    name: "job",
+    name: "عمل",
     version: "1.0.2",
     hasPermssion: 0,
     credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭", 
@@ -11,107 +10,108 @@ module.exports.config = {
         cooldownTime: 5000
     }
 };
+
 module.exports.languages = {
-    
     "en": {
-        "cooldown": "You're done, come back later: %1 minute(s) %2 second(s)."
+        "cooldown": "لقد أنهيت العمل مؤخرًا، عد لاحقًا بعد: %1 دقيقة و %2 ثانية."
     }
-}
+};
+
 module.exports.handleReply = async ({ event, api, handleReply, Currencies, getText }) => {
     const { threadID, messageID, senderID } = event;
     let data = (await Currencies.getData(senderID)).data || {};
-//random coins nhận được khi làm việc ít nhất 200
-var coinscn = Math.floor(Math.random() * 401) + 200; //random coins khi làm ở khu công nghiệp
-var coinsdv = Math.floor(Math.random() * 801) + 200; //random coins khi làm ở khu dịch vụ
-var coinsmd = Math.floor(Math.random() * 401) + 200; //random coins khi làm ở mỏ dầu
-var coinsq = Math.floor(Math.random() * 601) + 200; //random coins khi khai thác quặng
-var coinsdd = Math.floor(Math.random() * 201) + 200; //random coins khi đào đá
-var coinsdd1 = Math.floor(Math.random() * 801) + 200; //random coins khi đào đá
 
-//random things to do
-var rdcn = ['hiring staff', 'hotel administrator', 'at the power plant', 'restaurant chef', 'worker']; //random job when working in industrial park
-var work1 = rdcn[Math.floor(Math.random() * rdcn.length)];   
+    // المبالغ العشوائية المكتسبة
+    var coinscn = Math.floor(Math.random() * 401) + 200;
+    var coinsdv = Math.floor(Math.random() * 801) + 200;
+    var coinsmd = Math.floor(Math.random() * 401) + 200;
+    var coinsq = Math.floor(Math.random() * 601) + 200;
+    var coinsdd = Math.floor(Math.random() * 201) + 200;
+    var coinsdd1 = Math.floor(Math.random() * 801) + 200;
 
-var rddv = ['plumber', 'neighbors air conditioner repair', 'multi-level sale', 'flyer distribution', 'shipper', 'computer repair', 'tour guide', 'breastfeeding' ]; //random work when working in the service area
-var work2 = rddv[Math.floor(Math.random() * rddv.length)]; 
+    // الوظائف العشوائية
+    var rdcn = ['توظيف موظفين', 'مدير فندق', 'في محطة توليد الكهرباء', 'طاهٍ في مطعم', 'عامل مصنع'];
+    var work1 = rdcn[Math.floor(Math.random() * rdcn.length)];   
 
-var rdmd = ['earn 13 barrels of oil', 'earn 8 barrels of oil', 'earn 9 barrels of oil', 'earn 8 barrels of oil', 'steal the oil', 'take water and pour it into oil and sell it']; //random job while working at an oil field
-var work3 = rdmd[Math.floor(Math.random() * rdmd.length)]; 
+    var rddv = ['سبّاك', 'تصليح مكيف الجيران', 'تسويق متعدد المستويات', 'توزيع منشورات', 'عامل توصيل', 'فني حاسوب', 'دليل سياحي', 'مربية أطفال'];
+    var work2 = rddv[Math.floor(Math.random() * rddv.length)]; 
 
-var rdq = ['iron ore', 'gold ore', 'coal ore', 'lead ore', 'copper ore', 'oil ore']; //random job when mining ore
-var work4 = rdq[Math.floor(Math.random() * rdq.length)]; 
+    var rdmd = ['ربحت 13 برميل نفط', 'ربحت 8 براميل نفط', 'ربحت 9 براميل نفط', 'سرقت بعض النفط', 'خلطت الماء بالنفط وبعته'];
+    var work3 = rdmd[Math.floor(Math.random() * rdmd.length)]; 
 
-var rddd = ['diamond', 'gold', 'coal', 'emerald', 'iron', 'ordinary stone', 'lazy', 'bluestone']; //random job when digging rock
-var work5 = rddd[Math.floor(Math.random() * rddd.length)]; 
+    var rdq = ['خام الحديد', 'خام الذهب', 'خام الفحم', 'خام الرصاص', 'خام النحاس', 'خام النفط'];
+    var work4 = rdq[Math.floor(Math.random() * rdq.length)]; 
 
-var rddd1 = ['vip guest', 'patent', 'stranger', '23-year-old fool', 'stranger', 'patron', '92-year-old tycoon', '12-year-old boyi']; //random work when digging rock
-var work6 = rddd1[Math.floor(Math.random() * rddd1.length)];
+    var rddd = ['ألماس', 'ذهب', 'فحم', 'زمرد', 'حديد', 'صخر عادي', 'كسل', 'حجر أزرق'];
+    var work5 = rddd[Math.floor(Math.random() * rddd.length)]; 
 
+    var rddd1 = ['زائر مميز', 'براءة اختراع', 'شخص غريب', 'غبي عمره 23 عامًا', 'راعي غني عمره 92 عامًا', 'طفل عمره 12 عامًا'];
+    var work6 = rddd1[Math.floor(Math.random() * rddd1.length)];
 
-var msg = "";
+    var msg = "";
+
     switch(handleReply.type) {
         case "choosee": {
-            
             switch(event.body) {
-                case "1": msg = `⚡️You are working ${work1} in the industrial zone and earn ${coinscn}$` ; Currencies.increaseMoney(event.senderID, coinscn); break;             
-                case "2": msg = `⚡️You are working ${work2} in the service area and earn ${coinsdv}$`; Currencies.increaseMoney(event.senderID, coinsdv); break;
-                case "3": msg = `⚡️You ${work3} at the open oil and sell ${coinsmd}$`; Currencies.increaseMoney(event.senderID, coinsmd); break;
-                case "4": msg = `⚡️You are mining ${work4} and earn ${coinsq}$`; Currencies.increaseMoney(event.senderID, coinsq); break;
-                case "5": msg = `⚡️You can dig ${work5} and earn ${coinsdd}$` ; Currencies.increaseMoney(event.senderID, coinsdd); break;
-                case "6": msg = `⚡️You choose ${work6} and given ${coinsdd1}$ if xxx 1 night, then you agree right away :)))`; Currencies.increaseMoney(event.senderID, coinsdd1); break;
-                case "7": msg = "⚡️ Coming soon..."; break; //add case if you want 
+                case "1": msg = `⚡️لقد عملت كـ ${work1} في المنطقة الصناعية وربحت ${coinscn}$`; Currencies.increaseMoney(senderID, coinscn); break;
+                case "2": msg = `⚡️لقد عملت كـ ${work2} في منطقة الخدمات وربحت ${coinsdv}$`; Currencies.increaseMoney(senderID, coinsdv); break;
+                case "3": msg = `⚡️${work3} في حقل النفط وربحت ${coinsmd}$`; Currencies.increaseMoney(senderID, coinsmd); break;
+                case "4": msg = `⚡️استخرجت ${work4} وربحت ${coinsq}$`; Currencies.increaseMoney(senderID, coinsq); break;
+                case "5": msg = `⚡️قمت بالحفر ووجدت ${work5} وربحت ${coinsdd}$`; Currencies.increaseMoney(senderID, coinsdd); break;
+                case "6": msg = `⚡️التقيت بـ ${work6} وقدّم لك ${coinsdd1}$ مقابل خدمة مشبوهة... ووافقت مباشرةً 😂`; Currencies.increaseMoney(senderID, coinsdd1); break;
+                case "7": msg = "⚡️سيتم التحديث قريبًا..."; break;
                 default: break;
             };
-            const choose = parseInt(event.body);
-            if (isNaN(event.body)) return api.sendMessage("⚡️Please enter 1 con number", event.threadID, event.messageID);
-            if (choose > 7 || choose < 1) return api.sendMessage("⚡️Option is not on the list.", event.threadID, event.messageID); //thay số case vào số 7
-            api.unsendMessage(handleReply.messageID);
-            if (msg == "⚡️Chưa update...") {
-                msg = "⚡️Update soon...";
-            };
-            return api.sendMessage(`${msg}`, threadID, async () => {
-            data.work2Time = Date.now();
-            await Currencies.setData(senderID, { data });
-            
-        });
 
-    };
-}
-}
-module.exports.run = async ({  event, api, handleReply, Currencies, getText }) => {
+            const choose = parseInt(event.body);
+            if (isNaN(event.body)) return api.sendMessage("⚡️يرجى إدخال رقم صحيح.", threadID, messageID);
+            if (choose > 7 || choose < 1) return api.sendMessage("⚡️الخيار غير موجود في القائمة.", threadID, messageID);
+
+            api.unsendMessage(handleReply.messageID);
+
+            if (msg === "⚡️Chưa update...") {
+                msg = "⚡️سيتم التحديث قريبًا...";
+            }
+
+            return api.sendMessage(`${msg}`, threadID, async () => {
+                data.work2Time = Date.now();
+                await Currencies.setData(senderID, { data });
+            });
+        }
+    }
+};
+
+module.exports.run = async ({ event, api, handleReply, Currencies, getText }) => {
     const { threadID, messageID, senderID } = event;
     const cooldown = global.configModule[this.config.name].cooldownTime;
     let data = (await Currencies.getData(senderID)).data || {};
-    //cooldownTime for each receipt 
-    if (typeof data !== "undefined" && cooldown - (Date.now() - data.work2Time) > 0) {
 
+    if (typeof data !== "undefined" && cooldown - (Date.now() - data.work2Time) > 0) {
         var time = cooldown - (Date.now() - data.work2Time),
             minutes = Math.floor(time / 60000),
             seconds = ((time % 60000) / 1000).toFixed(0); 
-        return api.sendMessage(getText("cooldown", minutes, (seconds < 10 ? "0" + seconds : seconds)), event.threadID, event.messageID);
+        return api.sendMessage(getText("cooldown", minutes, (seconds < 10 ? "0" + seconds : seconds)), threadID, messageID);
+    } else {
+        return api.sendMessage(
+          "💼 مركز الوظائف - اكسب المال من خلال العمل:\n\n" +
+          "1. العمل في المنطقة الصناعية 🏭\n" +
+          "2. العمل في منطقة الخدمات 🧰\n" +
+          "3. العمل في حقل نفط 🛢️\n" +
+          "4. استخراج المعادن الخام ⛏️\n" +
+          "5. الحفر في الصخور 💎\n" +
+          "6. تجربة غريبة 😅\n" +
+          "7. قريبًا...\n\n" +
+          "↪️ رد على هذه الرسالة برقم الوظيفة التي ترغب بها.",
+          threadID,
+          (error, info) => {
+              data.work2Time = Date.now();
+              global.client.handleReply.push({
+                  type: "choosee",
+                  name: this.config.name,
+                  author: senderID,
+                  messageID: info.messageID
+              });  
+          }
+        );
     }
-    else {    
-    return api.sendMessage("Coin Earn Job Center" +
-  /*công nghiệp*/ "\n\n1. work1" +
-  /*dịch vụ*/  "\n2. work2." +
-  /*Mỏ dầu*/ "\n3. work3." +
-  /*Quặng*/ "\n4. work4" +
-  /*Đào đá*/ "\n5. work5" +
-  /*cave*/    "\n6. work6" +
-                "\n7. Update soon..." +
-                "\n\n⚡️Please reply to the message and choose by number" //add case display here ||  \n[number]. [Career]" +
-            , event.threadID, (error, info) => {
-                data.work2Time = Date.now();
-        global.client.handleReply.push({
-            type: "choosee",
-            name: this.config.name,
-            author: event.senderID,
-            messageID: info.messageID
-          })  
-        })
-    }
-}
-/*
-@credit P-SeverTeam
-@Vui lòng không đổi credit!
-*/
+};
