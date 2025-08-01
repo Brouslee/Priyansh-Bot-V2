@@ -22,7 +22,7 @@ module.exports.run = async function({ api, event, args, client, Users, Threads, 
           minutes = Math.floor((time % (60 * 60)) / 60),
           seconds = Math.floor(time % 60);
     const moment = require("moment-timezone");
-    var juswa = moment.tz("Asia/Dhaka").format("『D/MM/YYYY』 【HH:mm:ss】");
+    var juswa = moment.tz("Africa/Libya").format("『D/MM/YYYY』 【HH:mm:ss】");
     var link = ["https://i.imgur.com/eDbdlvd.jpg"];
 
     var callback = () => api.sendMessage({
