@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "adduser",
+	name: "اضف",
 	version: "2.4.3",
 	hasPermssion: 0,
 	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
@@ -25,7 +25,7 @@ module.exports.run = async function ({ api, event, args }) {
 		try {
 			var [id, name, fail] = await getUID(args[0], api);
 			if (fail == true && id != null) return out(id);
-			else if (fail == true && id == null) return out("User ID not found.")
+			else if (fail == true && id == null) return out("ما لقيته صدقني")
 			else {
 				await adduser(id, name || "Facebook user");
 			}
@@ -43,7 +43,7 @@ module.exports.run = async function ({ api, event, args }) {
 				await api.addUserToGroup(id, threadID);
 			}
 			catch {
-				return out(`Can't add ${name ? name : "user"} to group.`);
+				return out(`مقدر اضيف ${name ? name : "user"} للمجموعه.`);
 			}
 			if (approvalMode === true && !admins.includes(botID)) return out(`Add ${name ? name : "member"} to the approved list !`);
 			else return out(`Added ${name ? name : "member"} to group !`)
