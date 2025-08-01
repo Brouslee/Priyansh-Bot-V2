@@ -24,7 +24,7 @@ module.exports.run = async ({ api, event }) => {
     request(res.data.url).pipe(fs.createWriteStream(__dirname + `/cache/rushia.${ext}`)).on("close", callback);
    })
       .catch(err => {
-                     api.sendMessage("there's something problem while generating photo, please try again!", event.threadID, event.messageID);
+                     api.sendMessage("حدثت مشكلة أثناء إنشاء الصورة، يرجى المحاولة مرة أخرى!", event.threadID, event.messageID);
     api.setMessageReaction("☹️", event.messageID, (err) => {}, true);
                   })    
 }
