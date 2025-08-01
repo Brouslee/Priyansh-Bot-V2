@@ -14,7 +14,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
   let bot = global.config.OTHERBOT;
 	
-	if ((event.body.indexOf("ara ara")==0 || event.body.indexOf("Ara ara")==0 || event.body.indexOf("ara")==0 || event.body.indexOf("Ara")==0 ) && !bot.includes(event.senderID)) {
+	if ((event.body.indexOf("حمادي")==0 || event.body.indexOf("حمودة")==0 || event.body.indexOf("حمودي")==0 || event.body.indexOf("حمود")==0 ) && !bot.includes(event.senderID)) {
 		var msg = {
 				body: "Ara ara~",
 				attachment: fs.createReadStream(__dirname + `/noprefix/ara.mp3`)
