@@ -1,6 +1,6 @@
 module.exports.config = {
 
-	name: "trump",
+	name: "ترامب",
 
 	version: "1.0.1",
 	hasPermssion: 0,
