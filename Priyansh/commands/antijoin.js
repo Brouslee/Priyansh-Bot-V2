@@ -1,5 +1,5 @@
 module.exports.config = {
- name: "antijoin",
+ name: "انضمام_تلقائي",
  eventType: ["log:subscribe"],
  version: "1.0.0",
  credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
@@ -20,6 +20,6 @@ module.exports.run = async function ({ event, api, Threads, Users }) {
                               global.data.threadData.set(event.threadID, data);
                     })
 			}
- 	return api.sendMessage(`[ERROR]- Your group is turning on anti join, please turn it off before adding new members`, event.threadID);
+ 	return api.sendMessage(`[خطأ]- ميزة منع الانضمام مفعله عندك طفيهت قبل متضيف يذكي`, event.threadID);
  }
 }
