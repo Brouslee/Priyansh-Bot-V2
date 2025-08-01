@@ -1,62 +1,66 @@
 module.exports.config = {
-	name: "info",
-	version: "1.0.1", 
-	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-	description: "Admin and Bot info.",
-	commandCategory: "...",
-	cooldowns: 1,
-	dependencies: 
-	{
-    "request":"",
-    "fs-extra":"",
-    "axios":""
-  }
+    name: "info",
+    version: "1.0.1", 
+    hasPermssion: 0,
+    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
+    description: "معلومات عن الأدمن والبوت.",
+    commandCategory: "...",
+    cooldowns: 1,
+    dependencies: {
+        "request": "",
+        "fs-extra": "",
+        "axios": ""
+    }
 };
-module.exports.run = async function({ api,event,args,client,Users,Threads,__GLOBAL,Currencies }) {
-const axios = global.nodemodule["axios"];
-const request = global.nodemodule["request"];
-const fs = global.nodemodule["fs-extra"];
-const time = process.uptime(),
-		hours = Math.floor(time / (60 * 60)),
-		minutes = Math.floor((time % (60 * 60)) / 60),
-		seconds = Math.floor(time % 60);
-const moment = require("moment-timezone");
-var juswa = moment.tz("Asia/Dhaka").format("『D/MM/YYYY』 【HH:mm:ss】");
-var link =                                     
-["https://i.imgur.com/eDbdlvd.jpg"];
-var callback = () => api.sendMessage({body:` ╾━╤デ╦︻(▀̿Ĺ̯▀̿ ̿)🇮🇳 𝐀𝐃𝐌𝐈𝐍 𝐀𝐍𝐃 𝐁𝐎𝐓 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐎𝐍 🇮🇳 
+
+module.exports.run = async function({ api, event, args, client, Users, Threads, __GLOBAL, Currencies }) {
+    const axios = global.nodemodule["axios"];
+    const request = global.nodemodule["request"];
+    const fs = global.nodemodule["fs-extra"];
+    const time = process.uptime(),
+          hours = Math.floor(time / (60 * 60)),
+          minutes = Math.floor((time % (60 * 60)) / 60),
+          seconds = Math.floor(time % 60);
+    const moment = require("moment-timezone");
+    var juswa = moment.tz("Asia/Dhaka").format("『D/MM/YYYY』 【HH:mm:ss】");
+    var link = ["https://i.imgur.com/eDbdlvd.jpg"];
+
+    var callback = () => api.sendMessage({
+        body: ` ╾━╤デ╦︻(▀̿Ĺ̯▀̿ ̿)🇱🇾 مـعـلـومـات عـن الأدمن والبـوت 🇱🇾
 (⌐▀͡ ̯ʖ▀)︻̷┻̿═━一-
 
-☄️Bot Name︎︎︎☄️  ${global.config.BOTNAME}
+☄️اسـم الـبـوت☄️  ${global.config.BOTNAME}
 
-🔥Bot Admin🔥☞︎︎︎☜︎︎︎✰ ℙ𝕣𝕚𝕪𝕒𝕟𝕤𝕙💔🥀
+🔥أدمـن الـبـوت🔥 ☞︎︎︎☜︎︎︎✰ HAMOD
 
-🙈bot andmin owner facebook id link🙈➪ www.facebook.com/priyanshu.rajput.official 💞🕊️
+🙈رابط حساب فيسبوك الأدمن🙈➪ www.facebook.com/ukidn 
 
-👋For Any Kind Of Help Contact On Telegram  Username 👉 @Priyanshrajput😇
+👋لأي مساعدة تواصل على تيليجرام: 👉 @it0c_4
 
 ✧══════•❁❀❁•══════✧
 
-🌸Bot Prefix🌸☞︎︎︎☜︎︎︎✰ ${global.config.PREFIX}
+🌸بادئة أوامر البوت🌸☞︎︎︎☜︎︎︎✰ ${global.config.PREFIX}
 
-♥️Bot Owner♥️ ☞︎︎︎☜︎︎︎✰ 𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭
+مـالـك الـبـوت ☞︎︎︎☜︎︎︎✰ محمد العكاري - حمود 
 
-🥳UPTIME🥳
+🥳الـوقـت مـنـذ تـشـغـيـل الـبـوت🥳
 
-🌪️Today is🌪️ ☞︎︎︎☜︎︎︎✰ ${juswa} 
+🌪️الـيـوم هـو🌪️ ☞︎︎︎☜︎︎︎✰ ${juswa} 
 
-⚡Bot is running⚡ ${hours}:${minutes}:${seconds}.
+⚡الـبـوت يعمل منـذ⚡ ${hours}:${minutes}:${seconds}.
 
-✅Thanks for using ${global.config.BOTNAME} Bot🖤
-
-
-🦢🍒•••ꞪɛᏒɛ ɪʂ ɮ❍┼ ❍ωɳɜɽ ɳaʍɜ•••🌷💞
-┏━🕊️━━°❀•°:🎀🧸💙🧸🎀:°•❀°━━💞━┓
-🌸✦✧✧✧✧✰🍒ℙ𝕣𝕚𝕪𝕒𝕟𝕤𝕙🌿✰✧✧✧✧✦🌸
-┗━🕊️━━°❀•°:🎀🧸💙🧸🎀:°•❀°━━💞━┛
+✅شكرًا لاستخدامك ${global.config.BOTNAME} 🖤
 
 
-`,attachment: fs.createReadStream(__dirname + "/cache/juswa.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/juswa.jpg")); 
-      return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/juswa.jpg")).on("close",() => callback());
-   };
+  •••هٰــنـا مـالـك الـبـوت•••
+┏━🕊️━━°❀•°:🤍😸🤍:°•❀°━━🤍━┓
+🌸✦✧✧✧✧✰  HAMOD  ✰✧✧✧✧✦🌸
+┗━🕊️━━°❀•°:🤍😸🤍:°•❀°━━🤍━┛
+`,
+        attachment: fs.createReadStream(__dirname + "/cache/juswa.jpg")
+    }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/juswa.jpg")); 
+
+    return request(encodeURI(link[Math.floor(Math.random() * link.length)]))
+        .pipe(fs.createWriteStream(__dirname + "/cache/juswa.jpg"))
+        .on("close", () => callback());
+};
