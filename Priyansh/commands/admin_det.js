@@ -1,4 +1,4 @@
-const fs = require("fs");
+*/const fs = require("fs");
 module.exports.config = {
   name: "admin2",
   version: "1.0.1",
@@ -24,4 +24,4 @@ fs.createReadStream(__dirname + `/noprefix/profile.png`)
   }
   module.exports.run = function({ api, event, client, __GLOBAL }) {
 
-  }
+  }/*
