@@ -1,7 +1,7 @@
 module.exports.config = {
-  name: "6mui",
+  name: "سك",
   version: "1.0.0",
-  hasPermssion: 0,
+  hasPermssion: 2,
   credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
   description: "Random 6-pack photos",
   commandCategory: "Random-IMG",
